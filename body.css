@@ -1,0 +1,106 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    margin: 0;
+    overflow: hidden;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.solar-system {
+    position: relative;
+    width: 600px;
+    height: 600px;
+}
+
+.sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -50px;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 20px 10px yellow;
+}
+
+.planet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border-radius: 50%;
+    background-color: gray;
+    transform-origin: -200px 0; /* Origem da transformação para a órbita */
+}
+
+.mercury {
+    animation: orbit-mercury 7.6s linear infinite;
+}
+
+.venus {
+    animation: orbit-venus 19.4s linear infinite;
+}
+
+.earth {
+    animation: orbit-earth 30s linear infinite;
+}
+
+.mars {
+    animation: orbit-mars 56.2s linear infinite;
+}
+
+@keyframes orbit-mercury {
+    from {
+        transform: rotate(0deg) translateX(200px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(200px) rotate(-360deg);
+    }
+}
+
+@keyframes orbit-venus {
+    from {
+        transform: rotate(0deg) translateX(300px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(300px) rotate(-360deg);
+    }
+}
+
+@keyframes orbit-earth {
+    from {
+        transform: rotate(0deg) translateX(400px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(400px) rotate(-360deg);
+    }
+}
+
+@keyframes orbit-mars {
+    from {
+        transform: rotate(0deg) translateX(500px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(500px) rotate(-360deg);
+    }
+}
+
+#info-box {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
